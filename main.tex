@@ -1,0 +1,29 @@
+\documentclass{memoir}
+%Temporary packages
+\usepackage{lipsum}
+\usepackage{microtype}
+
+
+
+% Preamble
+\input{config}
+
+%Reset chapter numbering everytime \book is issued
+\counterwithin*{chapter}{book}
+
+\title{An example memoir book}
+\author{Author Authorson}
+\date{}
+
+\begin{document}
+    \frontmatter
+        \input{content/halftitle}
+        \input{content/title}
+        \input{content/copyright}
+        \input{content/preface}
+    \mainmatter
+    \book{book1}
+            \input{content/chapter1}
+            \input{content/chapter2}
+    \backmatter
+\end{document}
