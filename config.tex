@@ -1,11 +1,224 @@
+%%%% Config version 0.1 %%%%
+
+%Temporary packages
+\usepackage{lipsum}
+\usepackage{blindtext}
+\usepackage{pgfornament}
+\usepackage{graphicx}
+
+
+
+%%
+%% FONTS
+%% using fontspec
+%%
+\usepackage{microtype}
+\usepackage[]{fontspec}
+
+\usepackage{ETbb}
+
+%\setmainfont{etbb}[% in local font directory
+%	Path= ./fonts/ETbb/ ,
+%	UprightFont		= *-Regular.otf ,
+%	BoldFont		= *-Bold.otf ,
+%	ItalicFont      = *-Italic.otf ,
+%	BoldItalicFont  = *-BoldItalic.otf ,
+%]
+
+%\setsansfont{NunitoSans}[% system font
+%	Path= ./fonts/nunitosans/ ,
+%	UprightFont		= *-Regular.ttf ,
+%	BoldFont		= *-Bold.ttf ,
+%	ItalicFont      = *-Italic.ttf ,
+%	BoldItalicFont  = *-BoldItalic.ttf ,
+%]
+%
+%\setmonofont{Heuristica}[% latex package
+%	Path= ./fonts/heuristica/ ,
+%	UprightFont		= *-Regular.otf ,
+%	BoldFont		= *-Bold.otf ,
+%	ItalicFont      = *-Italic.otf ,
+%	BoldItalicFont  = *-BoldItalic.otf ,
+%]
+%
+%\newfontfamily\myfont{italianno}[% Use with {\myfont <text>}
+%	Path            =   ./fonts/italianno/,
+%	UprightFont     =   *-Regular,
+%] 
+
 %
 % PAPERSIZE AND MARGINS
 % see page 1 of the memoir manual
 %
-\setstocksize{8in}{5in} % size of the paper
+
+\setlxvchars[\normalfont\normalsize]
+
+\setstocksize{9in}{6in} % size of the paper
+%\setstocksize{297mm}{210mm} % size of the paper
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 
+%% Option 1, setting typeblock size and position
 %%\setbinding{<length>}
-\setlrmarginsandblock{0.5in}{*}{1.5} 
-\setulmarginsandblock{0.75in}{*}{1.5} 
-\checkandfixthelayout
+\settypeblocksize{36\onelineskip}{\lxvchars}{*}
+\setlrmargins{*}{*}{1.5}
+\setulmargins{*}{*}{1.5}
+\setheadfoot{3\onelineskip}{3\onelineskip}
+%\setheaderspaces{3\onelineskip}{*}{*}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\checkandfixthelayout[lines]
+
+%% Option 2, setting margins
+%%\setbinding{<length>}
+%\setlrmarginsandblock{0.5in}{*}{1.5} 
+%\setulmarginsandblock{1in}{*}{1.5} 
+%\checkandfixthelayout
+
+
+%%
+%% PAGE STYLE
+%%
+
+\makepagestyle{mypagestyle}
+%\makeheadrule{mypagestyle}{\textwidth}{\normalrulethickness}
+
+\makepsmarks{mypagestyle}{%
+	\nouppercaseheads
+%	\createmark{title}{both}{nonumber}{}{}
+	\createmark{chapter}{right}{shownumber}{}{. \space}
+	\createplainmark{toc}{both}{\contentsname}
+	\createplainmark{lof}{both}{\listfigurename}
+	\createplainmark{lot}{both}{\listtablename}
+	\createplainmark{bib}{both}{\bibname}
+	\createplainmark{index}{both}{\indexname}
+	\createplainmark{glossary}{both}{\glossaryname}
+	\makeevenhead{mypagestyle}%
+		{}{\normalfont\scshape\thetitle}{}
+	\makeoddhead{mypagestyle}%
+		{}{\normalfont\scshape\rightmark}{}
+	\makeevenfoot{mypagestyle}%
+		{}{\normalfont\thepage}{}
+	\makeoddfoot{mypagestyle}%
+		{}{\normalfont\thepage}{}
+}
+\pagestyle{mypagestyle}		
+%
+%\aliaspagestyle{plain}{mypagestyle}
+
+%%
+%% CHAPTER STYLE
+%%
+
+%\makechapterstyle{mychapterstyle}{% Default values:
+%  \setlength{\beforechapskip}{50pt}
+%  \renewcommand*{\chapterheadstart}{\vspace*{\beforechapskip}}
+%  \renewcommand*{\chapnamefont}{\normalfont\huge\bfseries}
+%  \renewcommand*{\printchaptername}{\chapnamefont \@chapapp}
+%  \renewcommand*{\chapternamenum}{\space}
+%  \renewcommand*{\chapnumfont}{\normalfont\huge\bfseries}
+%  \renewcommand*{\printchapternum}{\chapnumfont \thechapter}
+%  \setlength{\midchapskip}{20pt}
+%  \renewcommand*{\afterchapternum}{\par\nobreak\vskip \midchapskip}
+%  \renewcommand*{\printchapternonum}{}
+%  \renewcommand*{\chaptitlefont}{\normalfont\Huge\bfseries}
+%  \renewcommand*{\printchaptertitle}[1]{\chaptitlefont #1}
+%  \setlength{\afterchapskip}{40pt}
+%  \renewcommand*{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
+%}
+%\chapterstyle{mychapterstyle}
+
+
+%%
+%% LOWER SECTIONS STYLE
+%%
+
+\maxsecnumdepth{part} % number sections
+
+%% Section
+%\setbeforesecskip{-3.5ex plus -1ex minus -.2ex} %If the values are negative then the first line after the heading will not be indented.
+%\setsecindent{0em}
+%\setsecheadstyle{\Large\bfseries}
+%\setaftersecskip{2.3ex plus .2ex} %If the value is negative, then the heading will be run-in
+
+%% Subsection
+%\setbeforesubsecskip{-3.25ex plus -1ex minus -.2ex} %If the values are negative then the first line after the heading will not be indented.
+%\setsubsecindent{0em}
+%\setsubsecheadstyle{\large\bfseries}
+%\setaftersubsecskip{1.5ex plus .2ex} %If the value is negative, then the heading will be run-in
+
+%% Subsubsection
+%\setbeforesubsubsecskip{-3.25ex plus -1ex minus -.2ex} %If the values are negative then the first line after the heading will not be indented.
+%\setsubsubsecindent{0em}
+%\setsubsubsecheadstyle{\bfseries}
+%\setaftersubsubsecskip{1.5ex plus .2ex} %If the value is negative, then the heading will be run-in
+
+%% Paragraph
+%\setbeforeparaskip{3.25ex plus 1ex minus .2ex}
+%\setparaindent{0em}
+%\setparaheadstyle{\bfseries}
+%\setafterparaskip{-1em} %If the value is negative, then the heading will be run-in
+
+%% Subparagraph
+%\setbeforesubparaskip{3.25ex plus 1ex minus .2ex}
+%\setsubparaindent{\parindent}
+%\setsubparaheadstyle{\bfseries}
+%\setaftersubparaskip{-1em} %If the value is negative, then the heading will be run-in
+
+%%
+%% TABLE OF CONTENTS
+%%
+
+\maxtocdepth{section} % include sections
+%\renewcommand{\cftchapterpagefont}{}
+%\renewcommand{\cftchapterfont}{} 
+
+%%
+%% LETTRINE CONFIG
+%%
+
+\usepackage{lettrine}
+\usepackage{Zallman} %https://ftp.acc.umu.se/mirror/CTAN/macros/latex/contrib/lettrine/doc/lettrine.pdf
+% https://ftp.acc.umu.se/mirror/CTAN/macros/latex/contrib/cfr-initials/cfr-initials.pdf
+%
+\renewcommand{\LettrineTextFont}{\rmfamily}
+%\LettrineRealHeighttrue
+%\newcommand{\mylettr}[1]{\lettrine{\zall{#1}}} % lettrine with initial letter
+%\newcommand{\mylettr}[1]{#1} % Turn off lettrine
+\newcommand{\mylettr}[1]{\lettrine[lines=2]{#1}} % lettrine without initial letter
+
+%%
+%% CUSTOM COMMANDS
+%%
+
+%% Asterism
+% <code for asterism>
+
+
+%% \versopic{<picturename>}{<width>}{<undertext>}
+%% picture centered on the next verso page, intended just before new chapter
+\newcommand{\versopic}[3]{%
+\cleartoverso
+\thispagestyle{plain}
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/person1}\par
+	\vspace{10pt}
+	\centerline{Förnamn Efternamn, årtal}\par
+	\label{fig:test}
+\end{figure}
+
+}
+
+%% 
+%% see page  of the memoir manual
+%%
+
+
+%% 
+%% see page  of the memoir manual
+%%
+
+
+%% 
+%% see page  of the memoir manual
+%%

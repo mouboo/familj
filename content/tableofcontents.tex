@@ -1,0 +1,201 @@
+%% Commands for family tree
+\newlength{\boxhdist} \setlength{\boxhdist}{3.5cm}
+\newlength{\boxvdist} \setlength{\boxvdist}{2.2cm}
+
+%% Commands for my ToC.
+\newcommand{\mytocentrystyle}{\normalfont}
+\newcommand{\mytoccouplesep}{2ex}
+
+\newcommand{\mytocentry}[2]{
+	\noindent\mytocentrystyle#1\hspace{4pt}\dotfill\hspace{4pt}\pageref{#2}\par
+}
+
+
+%% Magnus verso
+
+\cleartoverso
+\thispagestyle{plain}
+\begin{tikzpicture}[%
+remember picture,
+overlay,
+shift={($(current page.north west)+(70pt,-80pt)$)},
+namebox/.style={draw,align=center,minimum height=7ex,drop shadow,fill=white},
+]
+\footnotesize
+\node[namebox] (Mfff) at (0,0) {Carl Johan\\Peterson};
+\node[namebox] (Mffm) at (0,-1\boxvdist) {Cajsa Lisa\\Magnusdotter};
+\node[namebox] (Mfmf) at (0,-2\boxvdist) {Carl Fredrik\\Sköld};
+\node[namebox] (Mfmm) at (0,-3\boxvdist) {Helena Christina\\Henriksdotter};
+\node[namebox] (Mmff) at (0,-4\boxvdist) {Carl August\\Bom};
+\node[namebox] (Mmfm) at (0,-5\boxvdist) {Selma\\Åberg};
+\node[namebox] (Mmmf) at (0,-6\boxvdist) {Erik\\Nilsson};
+\node[namebox] (Mmmm) at (0,-7\boxvdist) {Gustava\\Carlsdotter};
+%
+\node[namebox] (Mff) at (1\boxhdist,-0.5\boxvdist) {Oskar\\Karlsson};
+\node[namebox] (Mfm) at (1\boxhdist,-2.5\boxvdist) {Kristina\\Sköld};
+\node[namebox] (Mmf) at (1\boxhdist,-4.5\boxvdist) {Arthur\\Bom};
+\node[namebox] (Mmm) at (1\boxhdist,-6.5\boxvdist) {Anna\\Eriksson};
+%
+\node[namebox] (Mf) at (2\boxhdist,-1.5\boxvdist) {Sigurd\\Karlsson};
+\node[namebox] (Mm) at (2\boxhdist,-5.5\boxvdist) {Valborg\\Bom};
+%
+\node[namebox] (M) at (3\boxhdist,-3.5\boxvdist) {Magnus\\Kvillegård};
+
+\coordinate (a) at (0.5\boxhdist,-0\boxvdist);
+\coordinate (b) at (0.5\boxhdist,-0.5\boxvdist);
+\coordinate (c) at (0.5\boxhdist,-1\boxvdist);
+\draw[] (Mff) -- (b);
+\draw[] (Mfff) -- (a) -- (b) -- (c) -- (Mffm);
+
+\coordinate (d) at (0.5\boxhdist,-2\boxvdist);
+\coordinate (e) at (0.5\boxhdist,-2.5\boxvdist);
+\coordinate (f) at (0.5\boxhdist,-3\boxvdist);
+\draw[] (Mfm) -- (e);
+\draw[] (Mfmf) -- (d) -- (e) -- (f) -- (Mfmm);
+
+\coordinate (g) at (0.5\boxhdist,-4\boxvdist);
+\coordinate (h) at (0.5\boxhdist,-4.5\boxvdist);
+\coordinate (i) at (0.5\boxhdist,-5\boxvdist);
+\draw[] (Mmf) -- (h);
+\draw[] (Mmff) -- (g) -- (h) -- (i) -- (Mmfm);
+
+\coordinate (j) at (0.5\boxhdist,-6\boxvdist);
+\coordinate (k) at (0.5\boxhdist,-6.5\boxvdist);
+\coordinate (l) at (0.5\boxhdist,-7\boxvdist);
+\draw[] (Mmm) -- (k);
+\draw[] (Mmmf) -- (j) -- (k) -- (l) -- (Mmmm);
+
+\coordinate (m) at (1.5\boxhdist,-0.5\boxvdist);
+\coordinate (n) at (1.5\boxhdist,-1.5\boxvdist);
+\coordinate (o) at (1.5\boxhdist,-2.5\boxvdist);
+\draw[] (Mf) -- (n);
+\draw[] (Mff) -- (m) -- (n) -- (o) -- (Mfm);
+
+\coordinate (p) at (1.5\boxhdist,-4.5\boxvdist);
+\coordinate (q) at (1.5\boxhdist,-5.5\boxvdist);
+\coordinate (r) at (1.5\boxhdist,-6.5\boxvdist);
+\draw[] (Mm) -- (q);
+\draw[] (Mmf) -- (p) -- (q) -- (r) -- (Mmm);
+
+\coordinate (s) at (2.6\boxhdist,-1.5\boxvdist);
+\coordinate (t) at (2.6\boxhdist,-3.5\boxvdist);
+\coordinate (u) at (2.6\boxhdist,-5.5\boxvdist);
+\draw[] (M) -- (t);
+\draw[] (Mf) -- (s) -- (t) -- (u) -- (Mm);
+\normalsize
+\end{tikzpicture}
+
+
+%% Magnus recto
+
+\clearpage
+\thispagestyle{plain}
+\noindent\begin{minipage}[t][100pt][t]{\textwidth}
+	\raggedright
+	\LARGE\bfseries Innehållsförteckning:
+\end{minipage}
+
+\centerline{\Large\bfseries Magnus släkt\par\vspace{2ex}}
+
+\mytocentry{Carl Johan Petersson}{carljohanpetersson}
+\mytocentry{Cajsa Lisa Magnusdotter}{cajsalisamagnusdotter}
+\vspace{\mytoccouplesep}
+\mytocentry{Carl Fredrik Sköld}{carlfredriksköld}
+\mytocentry{Helena Christina Henriksdotter}{helenachristinahenriksdotter}
+\vspace{\mytoccouplesep}
+\mytocentry{Magnus Kvillegård}{rolfmagnussigurdkvillegård}
+
+
+%% Lisbeth verso
+
+\cleartoverso
+\thispagestyle{plain}
+\begin{tikzpicture}[%
+remember picture,
+overlay,
+shift={($(current page.north west)+(70pt,-80pt)$)},
+namebox/.style={draw,align=center,minimum height=7ex,drop shadow,fill=white},
+]
+\footnotesize
+\node[namebox] (Mfff) at (0,0) {Johan Peter\\Johansson};
+\node[namebox] (Mffm) at (0,-1\boxvdist) {Kristina Sofia\\Johansdotter};
+\node[namebox] (Mfmf) at (0,-2\boxvdist) {Isak\\Pettersson};
+\node[namebox] (Mfmm) at (0,-3\boxvdist) {Stina Maria\\Johansdotter};
+\node[namebox] (Mmff) at (0,-4\boxvdist) {Johan Peter\\Cederblad};
+\node[namebox] (Mmfm) at (0,-5\boxvdist) {Johanna Christina\\Lång};
+\node[namebox] (Mmmf) at (0,-6\boxvdist) {Johan August\\Caesar};
+\node[namebox] (Mmmm) at (0,-7\boxvdist) {Johanna Lovisa\\Johansdotter};
+%
+\node[namebox] (Mff) at (1\boxhdist,-0.5\boxvdist) {Carl Jonatan\\Johansson};
+\node[namebox] (Mfm) at (1\boxhdist,-2.5\boxvdist) {Linnea\\Isaksson};
+\node[namebox] (Mmf) at (1\boxhdist,-4.5\boxvdist) {Anders Fritjof\\Cederblad};
+\node[namebox] (Mmm) at (1\boxhdist,-6.5\boxvdist) {Hilma Teresia\\Cederblad};
+%
+\node[namebox] (Mf) at (2\boxhdist,-1.5\boxvdist) {Carl-Eric\\Johansson};
+\node[namebox] (Mm) at (2\boxhdist,-5.5\boxvdist) {Viva\\Cederblad};
+%
+\node[namebox] (M) at (3\boxhdist,-3.5\boxvdist) {Lisbeth\\Johansson};
+
+\coordinate (a) at (0.5\boxhdist,-0\boxvdist);
+\coordinate (b) at (0.5\boxhdist,-0.5\boxvdist);
+\coordinate (c) at (0.5\boxhdist,-1\boxvdist);
+\draw[] (Mff) -- (b);
+\draw[] (Mfff) -- (a) -- (b) -- (c) -- (Mffm);
+
+\coordinate (d) at (0.5\boxhdist,-2\boxvdist);
+\coordinate (e) at (0.5\boxhdist,-2.5\boxvdist);
+\coordinate (f) at (0.5\boxhdist,-3\boxvdist);
+\draw[] (Mfm) -- (e);
+\draw[] (Mfmf) -- (d) -- (e) -- (f) -- (Mfmm);
+
+\coordinate (g) at (0.5\boxhdist,-4\boxvdist);
+\coordinate (h) at (0.5\boxhdist,-4.5\boxvdist);
+\coordinate (i) at (0.5\boxhdist,-5\boxvdist);
+\draw[] (Mmf) -- (h);
+\draw[] (Mmff) -- (g) -- (h) -- (i) -- (Mmfm);
+
+\coordinate (j) at (0.5\boxhdist,-6\boxvdist);
+\coordinate (k) at (0.5\boxhdist,-6.5\boxvdist);
+\coordinate (l) at (0.5\boxhdist,-7\boxvdist);
+\draw[] (Mmm) -- (k);
+\draw[] (Mmmf) -- (j) -- (k) -- (l) -- (Mmmm);
+
+\coordinate (m) at (1.5\boxhdist,-0.5\boxvdist);
+\coordinate (n) at (1.5\boxhdist,-1.5\boxvdist);
+\coordinate (o) at (1.5\boxhdist,-2.5\boxvdist);
+\draw[] (Mf) -- (n);
+\draw[] (Mff) -- (m) -- (n) -- (o) -- (Mfm);
+
+\coordinate (p) at (1.5\boxhdist,-4.5\boxvdist);
+\coordinate (q) at (1.5\boxhdist,-5.5\boxvdist);
+\coordinate (r) at (1.5\boxhdist,-6.5\boxvdist);
+\draw[] (Mm) -- (q);
+\draw[] (Mmf) -- (p) -- (q) -- (r) -- (Mmm);
+
+\coordinate (s) at (2.6\boxhdist,-1.5\boxvdist);
+\coordinate (t) at (2.6\boxhdist,-3.5\boxvdist);
+\coordinate (u) at (2.6\boxhdist,-5.5\boxvdist);
+\draw[] (M) -- (t);
+\draw[] (Mf) -- (s) -- (t) -- (u) -- (Mm);
+\normalsize
+\end{tikzpicture}
+
+
+%% Lisbeth recto
+
+\clearpage
+\thispagestyle{plain}
+\noindent\begin{minipage}[t][100pt][t]{\textwidth}
+	\raggedright
+	\LARGE\bfseries Innehållsförteckning:
+\end{minipage}
+
+\centerline{\Large\bfseries Lisbeths släkt\par\vspace{2ex}}
+
+\mytocentry{Carl Johan Petersson}{carljohanpetersson}
+\mytocentry{Cajsa Lisa Magnusdotter}{cajsalisamagnusdotter}
+\vspace{\mytoccouplesep}
+\mytocentry{Carl Fredrik Skjöld}{carlfredrikskjöld}
+\mytocentry{Helena Christina Henriksdotter}{helenachristinahenriksdotter}
+\vspace{\mytoccouplesep}
+\mytocentry{Magnus Kvillegård}{rolfmagnussigurdkvillegård}

@@ -1,29 +1,76 @@
-\documentclass{memoir}
+\documentclass[11pt]{memoir}
 %Temporary packages
 \usepackage{lipsum}
 \usepackage{microtype}
+\usepackage{polyglossia}
+\setdefaultlanguage{swedish}
+\usepackage{tikz}
+\usetikzlibrary{calc,backgrounds,shadows}
 
-
+%\addto\captionsswedish{%
+%	\renewcommand{\figurename}{}
+%		\renewcommand{\}{}
+	
+%}
 
 % Preamble
 \input{config}
 
 %Reset chapter numbering everytime \book is issued
-\counterwithin*{chapter}{book}
+%\counterwithin*{chapter}{book}
 
-\title{An example memoir book}
-\author{Author Authorson}
+\title{Vår Släkthistoria}
+\author{Magnus \& Lisbeth Kvillegård}
 \date{}
 
 \begin{document}
+\sloppybottom
     \frontmatter
+    
         \input{content/halftitle}
         \input{content/title}
         \input{content/copyright}
-        \input{content/preface}
+        \input{content/förord}
+        %\cleardoublepage
+        %\tableofcontents*
+        \input{content/tableofcontents}
+        
     \mainmatter
-    \book{book1}
-            \input{content/chapter1}
-            \input{content/chapter2}
+		\part{Magnus släkt}
+		\input{content/magnus/carl_johan_petersson} % Magnus farfars far
+		\input{content/magnus/cajsa_lisa_magnusdotter} % Magnus farfars mor
+		\input{content/magnus/carl_fredrik_sköld} % Magnus farmors far
+		\input{content/magnus/helena_christina_henriksdotter} % Magnus farmors mor
+		\input{content/magnus/carl_august_bom} % Magnus morfars far
+		\input{content/magnus/selma_terese_åberg} % Magnus morfars mor
+		\input{content/magnus/erik_magnus_nilsson} % Magnus mormors far
+		\input{content/magnus/gustava_charlotta_carlsdotter} % Magnus mormors mor
+		\input{content/magnus/oskar_karlsson} % Magnus farfar
+		\input{content/magnus/maria_kristina_skjöld} % Magnus farmor
+		\input{content/magnus/karl_arthur_konrad_bom} % Magnus morfar
+		\input{content/magnus/anna_martina_eriksson} % Magnus mormor
+		\input{content/magnus/oskar_sigurd_mauritz_karlsson} % Magnus far
+		\input{content/magnus/alfa_valborg_martina_bom} % Magnus mor
+		\input{content/magnus/rolf_magnus_sigurd_kvillegård} % Magnus 
+        \input{content/magnus/kvillehults_historia}
+        \input{content/magnus/hultsnäs_historia}
+		\addtocontents{toc}{\protect\clearpage}
+        \part{Lisbeths släkt}
+        \input{content/lisbeth/johan_peter_johansson} % Lisbeths farfars far
+        \input{content/lisbeth/kristina_sofia_johansdotter} % Lisbeths farfars mor
+        \input{content/lisbeth/isak_pettersson} % Lisbeths farmors far
+        \input{content/lisbeth/stina_maria_johansdotter} % Lisbeths farmors mor
+        \input{content/lisbeth/johan_peter_cederblad} % Lisbeths morfars far
+        \input{content/lisbeth/johanna_christina_lång} % Lisbeths morfars mor
+        \input{content/lisbeth/johan_august_cecar} % Lisbeths mormors far
+        \input{content/lisbeth/johanna_lovisa_johansdotter} % Lisbeths mormors mor
+        \input{content/lisbeth/carl_jonatan_johansson} % Lisbeths farfar
+        \input{content/lisbeth/linnea_isaksson} % Lisbeths farmor
+        \input{content/lisbeth/anders_fritjof_cederblad} % Lisbeths morfar
+        \input{content/lisbeth/hilma_teresia_cederblad} % Lisbeths mormor
+        \input{content/lisbeth/carl-eric_johansson} % Lisbeths far
+        \input{content/lisbeth/viva_gunhild_maria_cederblad} % Lisbeths mor
+        \input{content/lisbeth/lisbeth_gunvor_maria_johansson} % Lisbeth
+        
     \backmatter
 \end{document}
